@@ -164,11 +164,11 @@ So, as we can see, imputing slightly changed the mean and median values and the 
 
 ## Are there differences in activity patterns between weekdays and weekends?
 
-Here we're creating the variable called "day" in which we define if this day is a weekday or a weekend and then we are plotting a plot graph that corresponds to weekdays and weekends.
+Here we're creating the variable called "day" in which we define if this day is a weekday or a weekend and then we are plotting a graph that corresponds to weekdays and weekends.
 
 ```r
 imp_data$day <- wday(imp_data$date)
-par(mfrow = c(1,2), mar = c(5,4,4,4))
+par(mfrow = c(1,2))
 average_steps_weekday <- tapply(imp_data$steps[which(imp_data$day %in% c(2,3,4,5,6))],
                                 imp_data$interval[which(imp_data$day %in% c(2,3,4,5,6))],
                                 mean,
